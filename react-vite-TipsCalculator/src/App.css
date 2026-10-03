@@ -1,0 +1,240 @@
+:root {
+  --cyan-primary: #26c2ae;
+  --bg-color: #c5e4e7;
+  --dark-green: #00474b;
+  --text-dark: #3d6666;
+  --text-light: #7f9d9f;
+  --bg-card: #ffffff;
+  --bg-input: #f3f9fb;
+  --error-color: #e17457;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Space Mono', monospace, sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 920px;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  color: var(--dark-green);
+  font-size: 1.5rem;
+  letter-spacing: 10px;
+}
+
+.header h1 span {
+  display: block;
+}
+
+/* Card Principal */
+.card {
+  background: var(--bg-card);
+  border-radius: 25px;
+  padding: 32px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.05);
+}
+
+@media (min-width: 768px) {
+  .card {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Form Section */
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+label {
+  color: var(--text-dark);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.error-msg {
+  color: var(--error-color);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrapper .icon {
+  position: absolute;
+  left: 16px;
+  color: var(--text-light);
+  font-weight: bold;
+}
+
+.input-wrapper input {
+  width: 100%;
+  background-color: var(--bg-input);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 8px 16px 8px 36px;
+  font-size: 1.25rem;
+  color: var(--dark-green);
+  font-weight: 700;
+  text-align: right;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-wrapper input:focus {
+  border-color: var(--cyan-primary);
+}
+
+.input-wrapper.input-error input {
+  border-color: var(--error-color);
+}
+
+/* Tip Grid */
+.tip-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+@media (min-width: 480px) {
+  .tip-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.tip-btn {
+  background-color: var(--dark-green);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tip-btn:hover {
+  background-color: #9fe8df;
+  color: var(--dark-green);
+}
+
+.tip-btn.active {
+  background-color: var(--cyan-primary);
+  color: var(--dark-green);
+}
+
+.custom-tip-input {
+  background-color: var(--bg-input);
+  border: 2px solid transparent;
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dark-green);
+  text-align: right;
+  outline: none;
+}
+
+.custom-tip-input:focus {
+  border-color: var(--cyan-primary);
+}
+
+/* Result Section */
+.result-section {
+  background-color: var(--dark-green);
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.result-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.result-label .title {
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.result-label .subtitle {
+  color: var(--text-light);
+  font-size: 0.75rem;
+}
+
+.amount {
+  color: var(--cyan-primary);
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.reset-btn {
+  background-color: var(--cyan-primary);
+  color: var(--dark-green);
+  border: none;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.reset-btn:hover:not(:disabled) {
+  background-color: #9fe8df;
+}
+
+.reset-btn:disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
